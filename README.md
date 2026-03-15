@@ -12,6 +12,9 @@ If this helped you, consider starring the repo ⭐
 ---
 
 <br />
+<p align="center">
+  <img src="[image.jpg](https://github.com/AlexRabbit/GL.INET-Settings-Explained/blob/main/assets/preview.jpg?raw=true)" alt="description">
+</p>
 
 ## 🌐 **The guide lives here.**
 
