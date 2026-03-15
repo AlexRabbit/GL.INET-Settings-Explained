@@ -67,7 +67,6 @@
   <div class="layout">
     <div class="sidebar-backdrop" aria-hidden="true" id="sidebar-backdrop"></div>
     <nav class="sidebar" id="sidebar-nav" aria-label="Modem menu navigation">
-      <p class="nav-label" data-i18n="nav.menu_label">Menu (same order as your modem)</p>
       <ul class="nav-list">
         <li><a href="#internet"><span class="nav-emoji" aria-hidden="true">🌐</span> <span data-i18n="nav.internet">INTERNET</span></a></li>
         <li><a href="#wireless"><span class="nav-emoji" aria-hidden="true">📶</span> <span data-i18n="nav.wireless">WIRELESS</span></a></li>
@@ -138,6 +137,9 @@
         <div class="callout callout-speed-vs-security" data-i18n="wireless.speed_sec">
           <strong>Speed vs security</strong> — For <strong>speed</strong>: 5&nbsp;GHz, 80&nbsp;MHz, Wi‑Fi 6 (ax). For <strong>security</strong>: WPA3 or WPA2-PSK, strong password, Randomized BSSID ON. Best: enable both 5&nbsp;GHz and 2.4&nbsp;GHz with strong security.
         </div>
+        <div class="callout callout-security" data-i18n="wireless.tips">
+          <strong>Tips</strong> — Use <strong>WPA3</strong> or WPA3-SAE if your modem offers it (stronger than WPA2). Keep <strong>Randomized BSSID ON</strong> for privacy. Use a long, random Wi‑Fi password (16+ characters). For guests, use a <strong>separate Guest Wi‑Fi</strong> with its own SSID and password and keep client/AP isolation ON. Hiding the SSID is weak security; keeping it shown is fine.
+        </div>
       </section>
 
       <!-- CLIENTS -->
@@ -192,6 +194,9 @@
         <div class="callout callout-speed-vs-security" data-i18n="network.rec">
           <strong>Recommendation</strong> — Prefer <strong>Failover</strong> for stability and predictable behaviour; use <strong>Load Balance</strong> when you need maximum throughput and understand that per-connection speed may not double.
         </div>
+        <div class="callout callout-security" data-i18n="network.multiwan_tips">
+          <strong>Tips</strong> — For <strong>security</strong>, keep <strong>Failover</strong> (one path at a time; simpler and more predictable). Use <strong>Load Balance</strong> only when you need extra bandwidth and accept traffic over multiple ISPs. <strong>Priority</strong>: Ethernet first, then Repeater, Tethering, Cellular (or drag to match your main link). <strong>Sensitivity</strong>: Medium is a good default; High for faster failover (e.g. streaming), Low if your link is unstable.
+        </div>
 
         <h3 data-i18n="network.lan">LAN</h3>
         <p data-i18n="network.lan_p">Local network and DHCP. Use private ranges only (e.g. 192.168.x.x, 10.x.x.x).</p>
@@ -216,12 +221,18 @@
           <dt data-i18n="network.gw_dns">Gateway / DNS Server 1 & 2</dt>
           <dd data-i18n="network.gw_dns_dd">Optional. If empty, devices usually get the router as gateway and use the modem’s DNS (e.g. AdGuard Home if enabled).</dd>
         </dl>
+        <div class="callout callout-security" data-i18n="network.dhcp_tips">
+          <strong>Tips</strong> — For <strong>securest</strong> DNS for all clients, set <strong>DNS Server 1</strong> = <code>1.1.1.1</code> and <strong>DNS Server 2</strong> = <code>1.0.0.1</code> (Cloudflare), or <code>9.9.9.9</code> and <code>149.112.112.112</code> (Quad9). That gives every device encrypted-capable DNS by default. Keep <strong>AP Isolation Off</strong> on your main LAN (so devices can see each other for casting/NAS); use <strong>On</strong> only for a separate guest or IoT SSID.
+        </div>
 
         <h3 data-i18n="network.reservation">Address Reservation</h3>
         <p data-i18n="network.reservation_p">Assign a fixed IP to a device by MAC address. Good for servers, printers, or port forwarding. Devices may need to reconnect to get the new IP.</p>
 
         <h3 data-i18n="network.guest">Guest Network</h3>
         <p data-i18n="network.guest_p">Separate Wi‑Fi for guests, often with AP isolation. Use a different SSID and password from your main network.</p>
+        <div class="callout callout-security" data-i18n="network.guest_tips">
+          <strong>Tips</strong> — Keep <strong>AP Isolation On</strong> so guest devices cannot talk to each other or your main LAN. Turn <strong>Block WAN Subnets On</strong> (if available) so guests can only reach the internet, not your internal subnets (e.g. 192.168.8.x).
+        </div>
 
         <h3 data-i18n="network.dns">DNS</h3>
         <p data-i18n="network.dns_p">Domain name resolution. If AdGuard Home or another app is enabled, it may act as DNS; otherwise you can set upstream servers here or in APPLICATIONS → AdGuard Home.</p>
@@ -237,6 +248,9 @@
           <dt data-i18n="network.block_ttl">Blocked response TTL</dt>
           <dd data-i18n="network.block_ttl_dd">How long clients cache blocked replies (e.g. <code>10</code> seconds).</dd>
         </dl>
+        <div class="callout callout-security" data-i18n="network.dns_tips">
+          <strong>Tips</strong> — For <strong>securest</strong>: turn <strong>DNS Rebinding Attack Protection On</strong>; set <strong>Override DNS for all clients On</strong>; use <strong>Manual</strong> DNS with e.g. <code>1.1.1.1</code> / <code>1.0.0.1</code> (Cloudflare) or <code>9.9.9.9</code> / <code>149.112.112.112</code> (Quad9). If you use a VPN, set <strong>Allow Custom DNS to Override VPN DNS Off</strong> so VPN DNS is used inside the tunnel. Enable <strong>DNS over TLS/HTTPS</strong> if the modem offers it.
+        </div>
 
         <h3 data-i18n="network.ethernet">Ethernet Port</h3>
         <p data-i18n="network.ethernet_p">Settings for the physical Ethernet ports (speed/duplex, VLANs if supported).</p>
@@ -269,6 +283,9 @@
 
         <h3 data-i18n="network.dropin">Drop-in Gateway</h3>
         <p data-i18n="network.dropin_p">GL.iNet feature to act as a transparent gateway (e.g. for VPN or ad-blocking) without changing the rest of the network topology.</p>
+        <div class="callout callout-security" data-i18n="network.dropin_tips">
+          <strong>Tips</strong> — Turn <strong>On</strong> when the modem is <em>behind</em> another router and you want all client traffic to use this modem’s VPN, AdGuard, or DNS. Turn <strong>Off</strong> when this modem is your only router (direct to ISP).
+        </div>
       </section>
 
       <!-- FLOW CONTROL -->
@@ -293,12 +310,18 @@
         <div class="callout callout-security" data-i18n="security.port_sec">
           <strong>Security</strong> — Only forward ports you actually need to a device you trust. Prefer disabling DMZ and using explicit port forwarding instead.
         </div>
+        <div class="callout callout-security" data-i18n="security.port_tips">
+          <strong>Tips</strong> — <strong>Never forward</strong> ports 22 (SSH), 80, 443, 8080, 8443 to your router or main PC. Forward only the <strong>exact port(s)</strong> needed, to <strong>one device IP</strong> (use reservation). Prefer a <strong>VPN (e.g. WireGuard server)</strong> on the modem to reach home from outside instead of opening ports. Keep <strong>Full Cone NAT Off</strong> (symmetric/restricted is stricter; Full Cone lets any internet host use an open mapping). Keep <strong>SIP ALG Off</strong> unless a VoIP provider requires it (it often breaks calls).
+        </div>
 
         <h3 data-i18n="security.mgmt">Management Control</h3>
         <p data-i18n="security.mgmt_p">Who can access the modem’s web interface (e.g. from LAN only, or restrict by IP).</p>
 
         <h3 data-i18n="security.nat">NAT Mode</h3>
         <p data-i18n="security.nat_p">How NAT is applied (e.g. symmetric vs full-cone). Usually default is fine unless you have specific requirements.</p>
+        <div class="callout callout-security" data-i18n="security.mgmt_tips">
+          <strong>Tips</strong> — Set a <strong>strong admin password</strong>. Turn <strong>Force HTTPS On</strong> and <strong>disable login from WAN</strong> (HTTPS/SSH Remote Access Off) so the web UI is only reachable from your LAN. Set <strong>Allow Ping from WAN Off</strong>. Enable SSH only if you need it; use a non-standard port (e.g. 2222) to reduce scans. Keep firmware updated.
+        </div>
       </section>
 
       <!-- APPLICATIONS -->
@@ -324,6 +347,9 @@
         <div class="callout callout-speed-vs-security" data-i18n="apps.ag_rec">
           <strong>Recommendation</strong> — For security/privacy: use tls:// or https:// upstreams and enable DNSSEC if available. For speed: parallel requests can reduce latency; load-balancing is a good default.
         </div>
+        <div class="callout callout-security" data-i18n="apps.tips">
+          <strong>Tips</strong> — <strong>DNS over QUIC (DoQ)</strong> is not in the router’s Manual DNS list; you can use it by setting AdGuard Home’s <strong>upstream</strong> to e.g. <code>quic://dns.adguard-dns.com</code> in the AdGuard dashboard. <strong>AdGuard DNS</strong> blocks ads/trackers; <strong>Cloudflare 1.1.1.1</strong> is fast with no blocking (use 1.1.1.2/1.0.0.2 for malware blocking). In <strong>Manage Sources</strong>, use only <strong>official or trusted</strong> plug-in sources; remove unknown ones.
+        </div>
       </section>
 
       <!-- SYSTEM -->
@@ -341,6 +367,9 @@
         </ul>
         <div class="callout callout-security" data-i18n="system.security">
           <strong>Security</strong> — Change the default admin password, keep firmware updated, and don’t expose the admin interface to the internet unless necessary.
+        </div>
+        <div class="callout callout-security" data-i18n="system.tips">
+          <strong>Tips</strong> — <strong>Upgrade:</strong> use “Common upgrade” (download the .img/.bin and SHA256 from GL.iNet); use “U-Boot” only for recovery. Connect via <strong>Ethernet</strong> during upgrade; don’t power off. <strong>Backup</strong> before upgrading (e.g. System → Advanced → Go to LuCI → Backup, or via SSH <code>sysupgrade -b</code>). Optional: <strong>scheduled reboot</strong> (e.g. weekly at night) for stability. For more options, use <strong>SSH</strong> (UCI, <code>/etc/config/</code>) or install LuCI.
         </div>
       </section>
     </main>
