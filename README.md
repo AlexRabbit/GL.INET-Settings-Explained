@@ -12,9 +12,7 @@ If this helped you, consider starring the repo ⭐
 ---
 
 <br />
-<p align="center">
-  <img src="[image.jpg](https://github.com/AlexRabbit/GL.INET-Settings-Explained/blob/main/assets/preview.jpg?raw=true)" alt="description">
-</p>
+[![GL.iNet Settings Explained Preview](./assets/preview.jpg)](https://alexrabbit.github.io/GL.INET-Settings-Explained/)
 
 ## 🌐 **The guide lives here.**
 
