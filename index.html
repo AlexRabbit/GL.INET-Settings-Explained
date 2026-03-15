@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GL.iNet Modem Settings Guide | Community Documentation</title>
+  <meta name="description" content="Understand every setting on your GL.iNet modem. Clear explanations, examples, and speed vs. security recommendations.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Abstract glassy background graphics -->
+  <div class="bg-graphics" aria-hidden="true">
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
+    <div class="bg-blob bg-blob-3"></div>
+    <div class="bg-blob bg-blob-4"></div>
+    <div class="bg-blob bg-blob-5"></div>
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+    <svg class="bg-mesh" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="mesh-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="rgba(255,255,255,0.15)"/><stop offset="100%" stop-color="rgba(255,255,255,0.02)"/></linearGradient></defs><path class="mesh-path mesh-path-1" d="M0,150 Q200,100 400,150 T800,150"/><path class="mesh-path mesh-path-2" d="M0,300 Q300,250 600,320 T1200,280"/><path class="mesh-path mesh-path-3" d="M0,450 Q250,400 500,450 T1000,420"/><circle class="mesh-dot" cx="100" cy="200" r="2"/><circle class="mesh-dot" cx="300" cy="80" r="1.5"/><circle class="mesh-dot" cx="600" cy="400" r="2"/><circle class="mesh-dot" cx="700" cy="150" r="1"/></svg>
+  </div>
+
+  <a class="skip-link" href="#main-content" data-i18n="skip_link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <button type="button" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar-nav">
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+      </button>
+      <h1 class="site-title">
+        <span data-i18n="header.title">GL.iNet Modem Guide</span>
+        <span class="site-tagline" data-i18n="header.tagline">Every setting explained.</span>
+      </h1>
+      <div class="lang-wrap">
+        <button type="button" class="lang-toggle" aria-label="Select language" aria-expanded="false" aria-haspopup="true" aria-controls="lang-dropdown" title="Language">
+          <span class="lang-toggle-text" data-i18n="lang.button">Language</span>
+          <svg class="lang-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </button>
+        <div id="lang-dropdown" class="lang-dropdown" role="menu" aria-label="Language selection" hidden>
+          <div class="lang-grid" role="none">
+            <button type="button" class="lang-option" data-lang="en" role="menuitem">English</button>
+            <button type="button" class="lang-option" data-lang="zh-Hans" role="menuitem">简体中文</button>
+            <button type="button" class="lang-option" data-lang="zh-Hant" role="menuitem">繁體中文</button>
+            <button type="button" class="lang-option" data-lang="de" role="menuitem">Deutsch</button>
+            <button type="button" class="lang-option" data-lang="es" role="menuitem">Español</button>
+            <button type="button" class="lang-option" data-lang="fr" role="menuitem">Français</button>
+            <button type="button" class="lang-option" data-lang="ga" role="menuitem">Gaeilge</button>
+            <button type="button" class="lang-option" data-lang="it" role="menuitem">Italiano</button>
+            <button type="button" class="lang-option" data-lang="lt" role="menuitem">Lietuvių</button>
+            <button type="button" class="lang-option" data-lang="nl" role="menuitem">Nederlands</button>
+            <button type="button" class="lang-option" data-lang="pl" role="menuitem">Polski</button>
+            <button type="button" class="lang-option" data-lang="uk" role="menuitem">Українська</button>
+            <button type="button" class="lang-option" data-lang="ja" role="menuitem">日本語</button>
+            <button type="button" class="lang-option" data-lang="eo" role="menuitem">Esperanto</button>
+            <button type="button" class="lang-option" data-lang="pt" role="menuitem">Português</button>
+            <button type="button" class="lang-option" data-lang="ru" role="menuitem">Русский</button>
+            <button type="button" class="lang-option" data-lang="ko" role="menuitem">한국어</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <div class="sidebar-backdrop" aria-hidden="true" id="sidebar-backdrop"></div>
+    <nav class="sidebar" id="sidebar-nav" aria-label="Modem menu navigation">
+      <p class="nav-label" data-i18n="nav.menu_label">Menu (same order as your modem)</p>
+      <ul class="nav-list">
+        <li><a href="#internet"><span class="nav-emoji" aria-hidden="true">🌐</span> <span data-i18n="nav.internet">INTERNET</span></a></li>
+        <li><a href="#wireless"><span class="nav-emoji" aria-hidden="true">📶</span> <span data-i18n="nav.wireless">WIRELESS</span></a></li>
+        <li><a href="#clients"><span class="nav-emoji" aria-hidden="true">🖥️</span> <span data-i18n="nav.clients">CLIENTS</span></a></li>
+        <li><a href="#cloud-services"><span class="nav-emoji" aria-hidden="true">☁️</span> <span data-i18n="nav.cloud_services">CLOUD SERVICES</span></a></li>
+        <li><a href="#vpn"><span class="nav-emoji" aria-hidden="true">🛡️</span> <span data-i18n="nav.vpn">VPN</span></a></li>
+        <li><a href="#network"><span class="nav-emoji" aria-hidden="true">🔀</span> <span data-i18n="nav.network">NETWORK</span></a></li>
+        <li><a href="#flow-control"><span class="nav-emoji" aria-hidden="true">⚡</span> <span data-i18n="nav.flow_control">FLOW CONTROL</span></a></li>
+        <li><a href="#security"><span class="nav-emoji" aria-hidden="true">🔒</span> <span data-i18n="nav.security">SECURITY</span></a></li>
+        <li><a href="#applications"><span class="nav-emoji" aria-hidden="true">📦</span> <span data-i18n="nav.applications">APPLICATIONS</span></a></li>
+        <li><a href="#system"><span class="nav-emoji" aria-hidden="true">⚙️</span> <span data-i18n="nav.system">SYSTEM</span></a></li>
+        <li><a class="nav-made-by" href="https://github.com/AlexRabbit" target="_blank" rel="noopener noreferrer"><span class="nav-emoji" aria-hidden="true">✨</span> <span data-i18n="nav.made_by">Made by</span></a></li>
+      </ul>
+    </nav>
+
+    <main id="main-content" class="main-content">
+      <section class="intro section-card" data-index="0">
+        <h2><span class="section-num" aria-hidden="true">00</span> <span data-i18n="intro.title">Welcome to the GL.iNet community guide</span></h2>
+        <p data-i18n-html="intro.p1">This guide walks you through <strong>every setting</strong> on your GL.iNet modem in the same order you see them in the admin panel. Each option is explained in plain language, with example values (placeholders only—never use your real passwords or network names here).</p>
+        <p data-i18n-html="intro.p2">Where a setting affects either <strong>speed</strong> or <strong>security</strong>, you’ll see a clear recommendation and the reason why.</p>
+      </section>
+
+      <!-- INTERNET -->
+      <section id="internet" class="section-card" data-index="1">
+        <h2><span class="section-num" aria-hidden="true">01</span> <span class="menu-icon" aria-hidden="true">🌐</span> <span data-i18n="internet.title">INTERNET</span></h2>
+        <p data-i18n="internet.desc">Settings for your main internet (WAN) connection: how the modem connects to your ISP and gets online.</p>
+        <ul class="setting-list">
+          <li data-i18n="internet.wan"><strong>WAN / Connection type</strong> — How the modem gets an IP (DHCP, PPPoE, static, etc.). Match what your ISP requires.</li>
+          <li data-i18n="internet.example"><strong>Example</strong> — Often <code>DHCP</code> for home fibre/cable; <code>PPPoE</code> if your ISP gave you a username and password.</li>
+        </ul>
+        <div class="callout callout-security" data-i18n="internet.security">
+          <strong>Security</strong> — If you use PPPoE, keep the password only in the modem; don’t share it. Prefer WPA2/WPA3 on Wi‑Fi.
+        </div>
+      </section>
+
+      <!-- WIRELESS -->
+      <section id="wireless" class="section-card" data-index="2">
+        <h2><span class="section-num" aria-hidden="true">02</span> <span class="menu-icon" aria-hidden="true">📶</span> <span data-i18n="wireless.title">WIRELESS</span></h2>
+        <p data-i18n="wireless.desc">Wi‑Fi for 5&nbsp;GHz and 2.4&nbsp;GHz. Names and passwords below are <strong>placeholders</strong>—replace with your own only in the modem UI, never in public.</p>
+
+        <h3 data-i18n="wireless.h5">5 GHz Wi‑Fi</h3>
+        <dl class="settings-dl">
+          <dt data-i18n="wireless.enable">Enable Wi‑Fi</dt>
+          <dd data-i18n="wireless.enable_dd">Turn 5&nbsp;GHz Wi‑Fi on or off. Use <strong>ON</strong> for best speed where supported.</dd>
+          <dt data-i18n="wireless.tx">TX Power</dt>
+          <dd data-i18n="wireless.tx_dd">Transmit power (e.g. <code>Max</code>, <code>Medium</code>). Higher = longer range, more interference; lower = less range, often cleaner signal.</dd>
+          <dt data-i18n="wireless.ssid">Wi‑Fi Name (SSID)</dt>
+          <dd data-i18n="wireless.ssid_dd">Network name others see. Example placeholder: <code>Your-5GHz-Network-Name</code>.</dd>
+          <dt>Enable Randomized BSSID</dt>
+          <dd>Changes the access point’s identifier to reduce tracking. <strong>Recommendation:</strong> turn <strong>ON</strong> for privacy.</dd>
+          <dt data-i18n="wireless.security">Wi‑Fi Security</dt>
+          <dd data-i18n="wireless.security_dd">Use <code>WPA2-PSK</code> or <code>WPA3</code> if available. Avoid WEP and open networks.</dd>
+          <dt data-i18n="wireless.password">Wi‑Fi Password</dt>
+          <dd data-i18n="wireless.password_dd">Use a strong, unique password. Example placeholder: <code>••••••••</code> (set your own in the modem).</dd>
+          <dt data-i18n="wireless.visibility">SSID Visibility</dt>
+          <dd data-i18n="wireless.visibility_dd"><code>Shown</code> = visible in scan lists; <code>Hidden</code> = not shown (slightly more obscure, not real security).</dd>
+          <dt data-i18n="wireless.mode">Wi‑Fi Mode</dt>
+          <dd data-i18n="wireless.mode_dd">e.g. <code>11a/n/ac/ax</code>. “ax” = Wi‑Fi 6 for best speed; allow older modes if you have older devices.</dd>
+          <dt data-i18n="wireless.bandwidth">Bandwidth</dt>
+          <dd data-i18n="wireless.bandwidth_dd">e.g. <code>80 MHz</code>. Wider = faster; narrower = better in crowded areas.</dd>
+          <dt data-i18n="wireless.channel">Channel</dt>
+          <dd data-i18n="wireless.channel_dd"><code>Auto</code> lets the modem pick; or set a fixed channel to avoid neighbours’ interference.</dd>
+        </dl>
+
+        <h3 data-i18n="wireless.h24">2.4 GHz Wi‑Fi</h3>
+        <p data-i18n="wireless.p24">Same types of settings as 5&nbsp;GHz: Enable, TX Power, SSID (e.g. placeholder <code>Your-2.4GHz-Network-Name</code>), security (WPA2/WPA3), password, visibility, mode (e.g. <code>11b/g/n/ax</code>), bandwidth (e.g. <code>20/40 MHz</code>), channel.</p>
+
+        <div class="callout callout-speed-vs-security" data-i18n="wireless.speed_sec">
+          <strong>Speed vs security</strong> — For <strong>speed</strong>: 5&nbsp;GHz, 80&nbsp;MHz, Wi‑Fi 6 (ax). For <strong>security</strong>: WPA3 or WPA2-PSK, strong password, Randomized BSSID ON. Best: enable both 5&nbsp;GHz and 2.4&nbsp;GHz with strong security.
+        </div>
+      </section>
+
+      <!-- CLIENTS -->
+      <section id="clients" class="section-card" data-index="3">
+        <h2><span class="section-num" aria-hidden="true">03</span> <span class="menu-icon" aria-hidden="true">🖥️</span> <span data-i18n="clients.title">CLIENTS</span></h2>
+        <p data-i18n="clients.desc">List of devices connected to your modem (IP, MAC, name). Use this to see who’s on the network and to apply parental controls or QoS per device.</p>
+        <ul class="setting-list">
+          <li data-i18n="clients.nodata">No personal data is shown in this guide; in your modem you’ll see your own devices.</li>
+        </ul>
+      </section>
+
+      <!-- CLOUD SERVICES -->
+      <section id="cloud-services" class="section-card" data-index="4">
+        <h2><span class="section-num" aria-hidden="true">04</span> <span class="menu-icon" aria-hidden="true">☁️</span> <span data-i18n="cloud.title">CLOUD SERVICES</span></h2>
+        <h3 data-i18n="cloud.goodcloud">GoodCloud</h3>
+        <p data-i18n="cloud.goodcloud_p">GL.iNet's remote management: access and manage your router from elsewhere. Convenient but adds a cloud dependency.</p>
+        <h3 data-i18n="cloud.astrowarp">AstroWarp</h3>
+        <p data-i18n="cloud.astrowarp_p">Another cloud/remote feature from GL.iNet. Check the modem’s help for current description.</p>
+        <div class="callout callout-security" data-i18n="cloud.security">
+          <strong>Security</strong> — Enabling cloud access means your modem is reachable from the internet. Use a strong admin password and only enable if you need remote access.
+        </div>
+      </section>
+
+      <!-- VPN -->
+      <section id="vpn" class="section-card" data-index="5">
+        <h2><span class="section-num" aria-hidden="true">05</span> <span class="menu-icon" aria-hidden="true">🛡️</span> <span data-i18n="vpn.title">VPN</span></h2>
+        <p data-i18n="vpn.desc">VPN Dashboard, OpenVPN and WireGuard client/server. Use <strong>Client</strong> to send your traffic through a VPN provider; use <strong>Server</strong> to let you connect back home securely.</p>
+        <ul class="setting-list">
+          <li data-i18n="vpn.dashboard"><strong>VPN Dashboard</strong> — Overview and status of VPN.</li>
+          <li data-i18n="vpn.openvpn"><strong>OpenVPN Client / Server</strong> — Classic, widely compatible VPN.</li>
+          <li data-i18n="vpn.wireguard"><strong>WireGuard Client / Server</strong> — Modern, fast VPN with simpler config.</li>
+        </ul>
+        <div class="callout callout-speed-vs-security" data-i18n="vpn.speed_sec">
+          <strong>Speed vs security</strong> — <strong>WireGuard</strong> is usually faster and simpler; <strong>OpenVPN</strong> is very well tested and supported everywhere. For best speed with good security: prefer WireGuard when your provider supports it.
+        </div>
+      </section>
+
+      <!-- NETWORK -->
+      <section id="network" class="section-card" data-index="6">
+        <h2><span class="section-num" aria-hidden="true">06</span> <span class="menu-icon" aria-hidden="true">🔀</span> <span data-i18n="network.title">NETWORK</span></h2>
+
+        <h3 data-i18n="network.multiwan">Multi-WAN</h3>
+        <p data-i18n="network.multiwan_p">The modem can use several internet links (Ethernet, Repeater, Tethering, Cellular).</p>
+        <dl class="settings-dl">
+          <dt data-i18n="network.if_track">Interface Status Track</dt>
+          <dd data-i18n="network.if_track_dd">Monitors each link (e.g. via ping). Use Sensitivity Options to tune when a link is considered down.</dd>
+          <dt data-i18n="network.mode">Mode</dt>
+          <dd data-i18n="network.mode_dd"><strong>Failover</strong> — Use one link; if it fails, switch to the next (reliability). <strong>Load Balance</strong> — Use multiple links at once for more total bandwidth (speed). Note: a single connection (e.g. one video stream) usually still uses one link.</dd>
+          <dt data-i18n="network.priority">Interface Priority</dt>
+          <dd data-i18n="network.priority_dd">Order of interfaces (e.g. Ethernet first, then Repeater, Tethering, Cellular). Drag to reorder.</dd>
+        </dl>
+        <div class="callout callout-speed-vs-security" data-i18n="network.rec">
+          <strong>Recommendation</strong> — Prefer <strong>Failover</strong> for stability and predictable behaviour; use <strong>Load Balance</strong> when you need maximum throughput and understand that per-connection speed may not double.
+        </div>
+
+        <h3 data-i18n="network.lan">LAN</h3>
+        <p data-i18n="network.lan_p">Local network and DHCP. Use private ranges only (e.g. 192.168.x.x, 10.x.x.x).</p>
+        <dl class="settings-dl">
+          <dt data-i18n="network.router_ip">Router IP Address</dt>
+          <dd data-i18n="network.router_ip_dd">Modem’s IP on the LAN. Example: <code>192.168.8.1</code> (typical; your subnet may differ).</dd>
+          <dt data-i18n="network.netmask">Netmask</dt>
+          <dd data-i18n="network.netmask_dd">e.g. <code>255.255.255.0</code> for a /24 subnet.</dd>
+          <dt data-i18n="network.ap_iso">AP Isolation</dt>
+          <dd data-i18n="network.ap_iso_dd">When ON, Wi‑Fi clients cannot talk to each other. Good for guest networks; leave OFF for normal home use.</dd>
+        </dl>
+
+        <h3 data-i18n="network.dhcp">DHCP Server</h3>
+        <p data-i18n="network.dhcp_p">Automatic IP assignment for devices. If you disable it, you must set IPs manually on each device.</p>
+        <dl class="settings-dl">
+          <dt data-i18n="network.dhcp_enable">Enable</dt>
+          <dd data-i18n="network.dhcp_enable_dd">ON = modem gives out IPs; OFF = you assign static IPs yourself.</dd>
+          <dt data-i18n="network.dhcp_range">Start / End IP Address</dt>
+          <dd data-i18n="network.dhcp_range_dd">Range, e.g. <code>192.168.8.100</code>–<code>192.168.8.249</code>. Must be in the same subnet as the router IP.</dd>
+          <dt data-i18n="network.lease">Lease Time</dt>
+          <dd data-i18n="network.lease_dd">How long a device keeps an IP (e.g. <code>720</code> minutes). Shorter = more churn; longer = stable.</dd>
+          <dt data-i18n="network.gw_dns">Gateway / DNS Server 1 & 2</dt>
+          <dd data-i18n="network.gw_dns_dd">Optional. If empty, devices usually get the router as gateway and use the modem’s DNS (e.g. AdGuard Home if enabled).</dd>
+        </dl>
+
+        <h3 data-i18n="network.reservation">Address Reservation</h3>
+        <p data-i18n="network.reservation_p">Assign a fixed IP to a device by MAC address. Good for servers, printers, or port forwarding. Devices may need to reconnect to get the new IP.</p>
+
+        <h3 data-i18n="network.guest">Guest Network</h3>
+        <p data-i18n="network.guest_p">Separate Wi‑Fi for guests, often with AP isolation. Use a different SSID and password from your main network.</p>
+
+        <h3 data-i18n="network.dns">DNS</h3>
+        <p data-i18n="network.dns_p">Domain name resolution. If AdGuard Home or another app is enabled, it may act as DNS; otherwise you can set upstream servers here or in APPLICATIONS → AdGuard Home.</p>
+        <dl class="settings-dl">
+          <dt data-i18n="network.rate_limit">Rate limit</dt>
+          <dd data-i18n="network.rate_limit_dd">Requests per second per client (e.g. <code>20</code>). <code>0</code> = no limit. Helps prevent abuse.</dd>
+          <dt data-i18n="network.prefix">Subnet prefix length (IPv4 / IPv6)</dt>
+          <dd data-i18n="network.prefix_dd">Used for rate limiting. Defaults e.g. <code>24</code> (IPv4), <code>56</code> (IPv6).</dd>
+          <dt data-i18n="network.dnssec">Enable DNSSEC</dt>
+          <dd data-i18n="network.dnssec_dd">Validates DNS replies. Recommendation: ON if your upstream DNS supports it (better security).</dd>
+          <dt data-i18n="network.block_mode">Blocking mode</dt>
+          <dd data-i18n="network.block_mode_dd">How to respond for blocked domains: Default (0.0.0.0 / ::), REFUSED, NXDOMAIN, Null IP, or Custom IP. Default is fine for most.</dd>
+          <dt data-i18n="network.block_ttl">Blocked response TTL</dt>
+          <dd data-i18n="network.block_ttl_dd">How long clients cache blocked replies (e.g. <code>10</code> seconds).</dd>
+        </dl>
+
+        <h3 data-i18n="network.ethernet">Ethernet Port</h3>
+        <p data-i18n="network.ethernet_p">Settings for the physical Ethernet ports (speed/duplex, VLANs if supported).</p>
+
+        <h3 data-i18n="network.ipv6">IPv6</h3>
+        <p data-i18n="network.ipv6_p">When enabled, the WAN can get an IPv6 address (e.g. via DHCPv6). You can also set it in Ethernet settings.</p>
+        <dl class="settings-dl">
+          <dt data-i18n="network.ipv6_enable">Enabled IPv6</dt>
+          <dd data-i18n="network.ipv6_enable_dd">Toggle IPv6 on or off.</dd>
+          <dt data-i18n="network.lan_mode">LAN Mode</dt>
+          <dd data-i18n="network.lan_mode_dd">e.g. NAT6. Defines how IPv6 is used on the LAN.</dd>
+          <dt data-i18n="network.dns_method">DNS acquisition method</dt>
+          <dd data-i18n="network.dns_method_dd">Automatic — From ISP. Manual DNS — You choose (e.g. Cloudflare, AdGuard) for privacy/filtering. Manual is recommended for more control.</dd>
+        </dl>
+        <div class="callout callout-security" data-i18n="network.ipv6_note">
+          <strong>Note</strong> — Some features (Firewall, GoodCloud, OpenVPN DCO) may not support IPv6 yet. If you rely on them, check before enabling IPv6.
+        </div>
+
+        <h3 data-i18n="network.igmp">IGMP Snooping</h3>
+        <p data-i18n="network.igmp_p">Listens to IGMP and builds Layer 2 multicast forwarding so only hosts that joined a multicast group get that traffic (e.g. for IPTV).</p>
+        <dl class="settings-dl">
+          <dt data-i18n="network.igmp_enable">Enable</dt>
+          <dd data-i18n="network.igmp_enable_dd">Turn IGMP Snooping on or off.</dd>
+          <dt data-i18n="network.igmp_ver">Version</dt>
+          <dd data-i18n="network.igmp_ver_dd">IGMPv3 is compatible with v1/v2. Use v3 by default; switch only if you have issues.</dd>
+        </dl>
+
+        <h3 data-i18n="network.net_mode">Network Mode</h3>
+        <p data-i18n="network.net_mode_p">Router, Access Point, Repeater, or Bridge. Defines whether the modem routes, extends Wi‑Fi, or only bridges.</p>
+
+        <h3 data-i18n="network.dropin">Drop-in Gateway</h3>
+        <p data-i18n="network.dropin_p">GL.iNet feature to act as a transparent gateway (e.g. for VPN or ad-blocking) without changing the rest of the network topology.</p>
+      </section>
+
+      <!-- FLOW CONTROL -->
+      <section id="flow-control" class="section-card" data-index="7">
+        <h2><span class="section-num" aria-hidden="true">07</span> <span class="menu-icon" aria-hidden="true">⚡</span> <span data-i18n="flow.title">FLOW CONTROL</span></h2>
+        <h3 data-i18n="flow.parental">Parental Control</h3>
+        <p data-i18n="flow.parental_p">Restrict access by device or schedule (e.g. block certain sites or time windows). Configure per client; no personal data is used in this guide.</p>
+      </section>
+
+      <!-- SECURITY -->
+      <section id="security" class="section-card" data-index="8">
+        <h2><span class="section-num" aria-hidden="true">08</span> <span class="menu-icon" aria-hidden="true">🔒</span> <span data-i18n="security.title">SECURITY</span></h2>
+        <h3 data-i18n="security.port_fwd">Port Forwarding</h3>
+        <h4 data-i18n="security.dmz">DMZ</h4>
+        <p data-i18n="security.dmz_p">DMZ exposes one device to the internet: all inbound traffic can be sent to that device. Use only if you need it (e.g. a game or server); it increases attack surface.</p>
+        <dl class="settings-dl">
+          <dt data-i18n="security.dmz_enable">Enable DMZ</dt>
+          <dd data-i18n="security.dmz_enable_dd">ON = one LAN device receives all forwarded inbound traffic. Keep OFF unless you understand the risk.</dd>
+        </dl>
+        <h4 data-i18n="security.rules">Port Forwarding rules</h4>
+        <p data-i18n="security.rules_p">Forward specific ports (e.g. 80, 443, 8080) to a LAN device by IP and port. Needed for hosting servers or some games. If two rules conflict on external port, the higher-priority rule wins.</p>
+        <div class="callout callout-security" data-i18n="security.port_sec">
+          <strong>Security</strong> — Only forward ports you actually need to a device you trust. Prefer disabling DMZ and using explicit port forwarding instead.
+        </div>
+
+        <h3 data-i18n="security.mgmt">Management Control</h3>
+        <p data-i18n="security.mgmt_p">Who can access the modem’s web interface (e.g. from LAN only, or restrict by IP).</p>
+
+        <h3 data-i18n="security.nat">NAT Mode</h3>
+        <p data-i18n="security.nat_p">How NAT is applied (e.g. symmetric vs full-cone). Usually default is fine unless you have specific requirements.</p>
+      </section>
+
+      <!-- APPLICATIONS -->
+      <section id="applications" class="section-card" data-index="9">
+        <h2><span class="section-num" aria-hidden="true">09</span> <span class="menu-icon" aria-hidden="true">📦</span> <span data-i18n="apps.title">APPLICATIONS</span></h2>
+        <ul class="setting-list">
+          <li data-i18n="apps.plugins"><strong>Plug-ins</strong> — Extra features you can install on the modem.</li>
+          <li data-i18n="apps.dyndns"><strong>Dynamic DNS</strong> — Update a hostname with your current public IP (useful if your IP changes).</li>
+          <li data-i18n="apps.storage"><strong>Network Storage</strong> — Use attached USB storage for file sharing.</li>
+          <li data-i18n="apps.adguard"><strong>AdGuard Home</strong> — DNS-level ad/tracker blocking. When ON, it can act as DNS and use custom upstream servers (see below).</li>
+          <li data-i18n="apps.tailscale"><strong>Tailscale / ZeroTier</strong> — Mesh VPN / overlay networks for secure access between your devices.</li>
+          <li data-i18n="apps.tor"><strong>Tor</strong> — Route traffic through the Tor network for anonymity.</li>
+        </ul>
+
+        <h3 data-i18n="apps.ag_dns">AdGuard Home — DNS settings</h3>
+        <p data-i18n="apps.ag_dns_p">When AdGuard Home is enabled, configure upstream DNS and query behaviour here.</p>
+        <dl class="settings-dl">
+          <dt data-i18n="apps.upstream">Upstream DNS servers</dt>
+          <dd data-i18n="apps.upstream_dd">One server per line. Examples: 8.8.8.8, 9.9.9.9, or encrypted: tls://unfiltered.adguard-dns.com, https://.... Use TLS/HTTPS for privacy.</dd>
+          <dt data-i18n="apps.query">Query handling</dt>
+          <dd data-i18n="apps.query_dd">Load-balancing — One upstream at a time, chosen by performance. Parallel requests — Ask all at once, use first reply (faster, more traffic). Fastest IP — Wait for all, return fastest IP (can improve connectivity, slower DNS).</dd>
+        </dl>
+        <div class="callout callout-speed-vs-security" data-i18n="apps.ag_rec">
+          <strong>Recommendation</strong> — For security/privacy: use tls:// or https:// upstreams and enable DNSSEC if available. For speed: parallel requests can reduce latency; load-balancing is a good default.
+        </div>
+      </section>
+
+      <!-- SYSTEM -->
+      <section id="system" class="section-card" data-index="10">
+        <h2><span class="section-num" aria-hidden="true">10</span> <span class="menu-icon" aria-hidden="true">⚙️</span> <span data-i18n="system.title">SYSTEM</span></h2>
+        <ul class="setting-list">
+          <li data-i18n="system.overview"><strong>Overview</strong> — Status, uptime, firmware version.</li>
+          <li data-i18n="system.admin"><strong>Admin Password</strong> — Change the password for the web admin. Use a strong, unique password.</li>
+          <li data-i18n="system.upgrade"><strong>Upgrade</strong> — Firmware updates. Keep the modem updated for security and features.</li>
+          <li data-i18n="system.scheduled"><strong>Scheduled Tasks</strong> — Reboot or other tasks on a schedule.</li>
+          <li data-i18n="system.timezone"><strong>Time Zone</strong> — Set correctly so logs and schedules are accurate.</li>
+          <li data-i18n="system.reset"><strong>Reset Firmware</strong> — Factory reset. Erases your settings; use only when needed.</li>
+          <li data-i18n="system.log"><strong>Log</strong> — System and connection logs. Clear or export if you need to; avoid sharing logs that might contain private info.</li>
+          <li data-i18n="system.advanced"><strong>Advanced Settings</strong> — Extra low-level options. Change only if you know what they do.</li>
+        </ul>
+        <div class="callout callout-security" data-i18n="system.security">
+          <strong>Security</strong> — Change the default admin password, keep firmware updated, and don’t expose the admin interface to the internet unless necessary.
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-credit" data-i18n="footer.credit">Community guide for GL.iNet modem users. Not affiliated with GL.iNet.</p>
+      <a href="https://github.com/AlexRabbit" class="footer-github" target="_blank" rel="noopener noreferrer" aria-label="AlexRabbit on GitHub">
+        <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        <span data-i18n="footer.github">AlexRabbit</span>
+      </a>
+    </div>
+  </footer>
+
+  <script src="assets/js/translations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
